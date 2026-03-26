@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clonerimo Directory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #23272a;
+            color: #ffffff;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-image: url('https://github.com/ivorydevrimoalt/OMG_ITS_CLONERIMO/blob/main/d8680b1c1576ecc8.png?raw=true');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #b9bbbe;
+            font-size: 1.2rem;
+        }
+
+        .card-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #2f3136;
+            border: 1px solid #4f545c;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, border-color 0.2s;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: #5865f2;
+            background-color: #36393f;
+        }
+
+        .card-info h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: capitalize;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-info p {
+            color: #b9bbbe;
+        }
+
+        .invite-icon {
+            background-color: #5865f2;
+            padding: 0.75rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-container"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Clonerimo</h1>
+            <p>System Directory & Access</p>
+        </div>
+
+        <div id="directory-list" class="card-list">
+            <!-- Content will be injected from JSON -->
+        </div>
+    </div>
+
+    <script>
+        // Data structure as requested
+        const clonerimoData = {
+            pages: [
+                {
+                    name: "invite",
+                    desc: "Invite Clonerimo into the discord server"
+                }
+            ]
+        };
+
+        function renderDirectory() {
+            const listContainer = document.getElementById('directory-list');
+            
+            clonerimoData.pages.forEach(page => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.onclick = () => {
+                    // Logic to navigate to the invite page
+                    window.location.href = 'index.html';
+                };
+
+                card.innerHTML = `
+                    <div class="card-info">
+                        <h2>${page.name}</h2>
+                        <p>${page.desc}</p>
+                    </div>
+                    <div class="invite-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                        </svg>
+                    </div>
+                `;
+
+                listContainer.appendChild(card);
+            });
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', renderDirectory);
+    </script>
+</body>
+</html>
