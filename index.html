@@ -132,8 +132,8 @@
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.onclick = () => {
-                    // Logic to navigate to the invite page
-                    window.location.href = 'index.html';
+                    // Navigate to ./page instead of index.html
+                    window.location.href = './Invite';
                 };
 
                 card.innerHTML = `
@@ -142,8 +142,9 @@
                         <p>${page.desc}</p>
                     </div>
                     <div class="invite-icon">
+                        <!-- Replaced + with > icon -->
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                            <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.59Z" />
                         </svg>
                     </div>
                 `;
