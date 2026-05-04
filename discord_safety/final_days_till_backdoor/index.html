@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critical Security Breach | Discord</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --discord-blurple: #5865F2;
+            --discord-dark: #313338;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #000;
+            color: #ffffff;
+            overflow: hidden; 
+            height: 100vh;
+        }
+
+        /* Fixed Background Container */
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background-image: url('https://github.com/ivorydevrimoalt/OMG_ITS_CLONERIMO/blob/main/d8680b1c1576ecc8.png?raw=true');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px) saturate(1);
+            transition: filter 0.1s linear;
+        }
+
+        /* TOPMOST 7 FPS Static Overlay */
+        .static-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999; /* Toppest index */
+            opacity: 0.4;
+            pointer-events: none; /* Allows scrolling through it */
+            overflow: hidden;
+        }
+
+        .static-overlay::before {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Resolution_White_Noise_Video.gif");
+            background-size: 512px 512px;
+            animation: static-step 0.8s steps(7) infinite;
+        }
+
+        @keyframes static-step {
+            0% { transform: translate(0, 0); }
+            14% { transform: translate(-5%, -2%); }
+            28% { transform: translate(2%, 7%); }
+            42% { transform: translate(-8%, -5%); }
+            56% { transform: translate(4%, 3%); }
+            70% { transform: translate(-3%, 9%); }
+            84% { transform: translate(6%, -4%); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Virtual Scroll Container */
+        #scroll-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            will-change: transform;
+        }
+
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: rgba(43, 45, 49, 0.95);
+            min-height: 100vh;
+            box-shadow: 0 0 80px rgba(0,0,0,0.8);
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-image {
+            width: 100%;
+            height: auto;
+            border-radius: 40px;
+            margin-bottom: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .author-meta {
+            text-align: center;
+            color: #b9bbbe;
+            margin-bottom: 50px;
+            font-size: 0.9rem;
+        }
+
+        .article-body {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #dbdee1;
+        }
+
+        .article-body p {
+            margin-bottom: 30px;
+        }
+
+        .warning-box {
+            background: rgba(242, 63, 66, 0.15);
+            border-left: 4px solid #f23f42;
+            padding: 24px;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+
+        .critical-warning {
+            color: #f23f42;
+            font-weight: bold;
+            border: 1px solid rgba(242, 63, 66, 0.3);
+            padding: 25px;
+            border-radius: 4px;
+            background: rgba(0,0,0,0.2);
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 40px 0;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: right;
+            font-style: italic;
+            color: #ffffff;
+            font-weight: bold;
+            padding-bottom: 120px;
+        }
+        
+        .section-header {
+            color: #5865F2;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-container" id="bg"></div>
+    <div class="static-overlay"></div>
+
+    <div id="scroll-container">
+        <div class="content-wrapper">
+            <img src="https://github.com/ivorydevrimoalt/OMG_ITS_CLONERIMO/blob/main/sad_discord.png?raw=true" alt="Security Shield" class="header-image">
+
+            <h1>We're never too late... are we?</h1>
+            
+            <div class="author-meta">
+                <span>🛡️ Discord Security Team</span><br>
+                <span id="current-date">Fetching date...</span>
+            </div>
+
+            <div class="article-body">
+                <p>You had really noticed alots of errors during your experience, voice chats keep saying Awaiting Endpoint, all messages fail to load, it was not about your wifi.</p>
+
+                <div class="warning-box">
+                    <strong>SYSTEM LEVEL FAILURE:</strong> Our internal investigations have confirmed a catastrophic breach. Our Bitcoin transaction database, administrative password repositories, secret development servers, and our official YouTube account have all been fully Compromised. 
+                </div>
+
+                <p>The technical reality of this breach has spiraled beyond our worst-case projections. Initially, our telemetry indicated minor discrepancies in packet headers, but we soon realized that the very foundation of our backend services was being systematically dismantled. The compromizer has successfully exfiltrated full sets of usernames and hashed passwords for our most secure environments, including the core shards that manage global user authentication.</p>
+
+                <p>Even more distressing, the attacker has indicated that the compromizer is gonna implement a youtube video on the starting of <span class="deadline-text font-bold text-red-500"></span>. This isn't just a site redirect; it is a deep-level injection into the boot-up sequence of the Discord client itself, effectively turning every single installation into a gateway for malicious content distribution.</p>
+
+                <p class="critical-warning">
+                    We thought it was an ordinary scammer, but we were very wrong, the only hacker we had found out was ivorydevrimoqr#7079. We are trying to find more hackers than that and if we don't find more until <span id="deadline-date">...</span>, our site will permenantly shutdown.
+                </p>
+
+                <div class="section-header">The Anatomy of the Breach</div>
+                <p>The breach began at a level most security protocols aren't even designed to monitor. By exploiting a zero-day vulnerability in our Bitcoin payment processor's integration, the attacker gained lateral movement into our internal databases. This was not a quick smash-and-grab. This was a patient, methodical occupation. Our administrative password repositories, which are usually isolated behind multiple layers of biometric and hardware-key authentication, were bypassed using a sophisticated session-token forging technique.</p>
+
+                <p>Once inside, ivorydevrimoqr#7079 targeted our secret development servers—the "Dark Shards" where we test upcoming features. These servers contain the uncompiled source code for Discord's voice and video processing engines. By compromising these, the attacker has been able to inject "Awaiting Endpoint" loops into the global infrastructure. When you see that error, it is not your ISP failing; it is the hijacked engine attempting to reroute your voice traffic through a malicious proxy node for exfiltration.</p>
+
+                <div class="section-header">Administrative Password Repositories</div>
+                <p>The compromise of our administrative passwords is perhaps the most damaging blow. These repositories contain the "God-Keys" to our infrastructure. With these credentials, the compromizer has been able to create "invisible" administrator accounts that do not appear in our standard audit logs. We have seen evidence of these ghost accounts modifying the permissions of large verified servers, preparing the ground for a massive, coordinated takeover.</p>
+
+                <p>Our security engineers are currently locked in a digital war of attrition. Every time we revoke a compromised credential, the attacker uses their access to our secret servers to generate a new one. The backdoor is not just a piece of code; it's a living, breathing parasite within our network. The Bitcoin database, which tracks every transaction ever made on our platform, has been cloned. This means the attacker potentially has the transaction history and wallet addresses of every user who has ever purchased Nitro or Nitro Classic.</p>
+
+                <div class="section-header">The Hijacked YouTube Account</div>
+                <p>By seizing control of our official YouTube channel, the attacker has gained a massive platform for social engineering. They are not just using it to post fake giveaway videos. They have integrated the channel's API keys directly into our site's framework. This allows them to bypass our Content Security Policy (CSP) and force a video to play upon the client's initialization. This video is intended to act as a distraction while the malicious scripts finalize their encryption of your local data.</p>
+
+                <p>Imagine opening Discord and, before you can even see your friend list, being met with a non-skippable video that hides the silent extraction of your session tokens. This is the future the compromizer is building for <span class="deadline-text"></span>. We are desperately trying to regain control of the YouTube account, but Google's recovery protocols are being blocked by the attacker's use of our own administrative emails, which are also under their control.</p>
+
+                <div class="section-header">Deep Network Infiltration</div>
+                <p>As we delve deeper into the network logs, the true horror of the situation becomes apparent. The compromizer didn't just take the passwords; they rewrote the logic of the password validation service itself. Every time a user logs in, a secondary payload is delivered to their browser. This payload is a sophisticated keylogger that captures not just Discord passwords, but every keystroke made in that browser session. We are essentially hosting a global surveillance system for ivorydevrimoqr#7079.</p>
+                
+                <p>The secret servers, once the pride of our development team, have been turned into massive mining rigs for Bitcoin, siphoning away the processing power of our core infrastructure. This is why you are experiencing lag, dropped calls, and "Awaiting Endpoint" messages. The resources meant to maintain your connection are being stolen to fuel the attacker's digital wallet. The irony of using a social platform's secret R&D servers to mine the very currency whose database was compromised is not lost on us.</p>
+
+                <div class="section-header">The Threat to User Sovereignty</div>
+                <p>This is not just about Discord. This is about your digital identity. When a backdoor of this magnitude exists, every account you have linked to Discord—your Steam, your Spotify, your GitHub—is at risk. The "Awaiting Endpoint" error is a signal that the bridge between your machine and our server has been replaced with a tunnel to the compromizer's infrastructure. In this tunnel, every keystroke, every private message, and every image shared is logged and analyzed.</p>
+
+                <p>The technical depth of this hijack is staggering. It involves a modification to the underlying Electron framework that Discord uses. By injecting code into the binary itself, ivorydevrimoqr#7079 has ensured that even a full re-installation of the app might not be enough to clear the infection if the installer itself is pulled from our compromised CDN. We are effectively fighting against our own tools.</p>
+
+                <div class="section-header">Global Data Persistence Risks</div>
+                <p>The compromizer's reach extends to our database backups as well. We've discovered that the ransomware-style logic has been applied to our historical archives. If we attempt to roll back the servers to a date before the breach, a "dead man's switch" will trigger, deleting all user data across all shards. We are being held hostage by our own history. The data of millions of users, years of conversations, and communities built over a decade are all balanced on a knife's edge.</p>
+
+                <div class="section-header">The Search for Co-Conspirators</div>
+                <p>While ivorydevrimoqr#7079 is the only name we have confirmed, the sheer scale of the operation suggests a larger group. No single person could manage the simultaneous breach of a global payment database, a source code repository, and multiple social media platforms. We are monitoring deep-web forums and encrypted chat rooms for any sign of "ivory's" accomplices. If we cannot identify and neutralize the entire cell before the deadline, the damage will be irreversible.</p>
+
+                <p>The shutdown mentioned in the warning is not a choice; it is a failsafe. If we cannot guarantee the security of our users' data, we have a moral and legal obligation to take the entire service offline permanently. The site you are reading this on may soon cease to exist, leaving a void in the social fabric of the internet, all because of a breach we were too slow to recognize.</p>
+
+                <div class="section-header">The Final Stage: The Video Injection</div>
+                <p>On <span class="deadline-text"></span>, the compromizer intends to finalize the hijack. The planned YouTube video injection is more than just a prank. It contains a steganographic payload hidden in the video frames. As the video plays, your CPU will silently decode instructions that will finalize the encryption of your entire hard drive. This is why we are warning you now. This is why the friction of this site is increasing. We are trying to buy you time.</p>
+
+                <p>Every paragraph here is a barrier we've erected to slow down the malicious scripts. If you feel the page resisting your scroll, it means the compromizer is trying to pull you toward the end—toward the trigger point. Resist the urge to hurry. The truth is buried in the slow movement. The "Awaiting Endpoint" is the only thing standing between you and total digital collapse.</p>
+
+                <div class="section-header">A Call for Vigilance</div>
+                <p>As you scroll through this document, our servers are burning. We are attempting to move our most critical assets to "Cold Storage"—physical servers that are completely disconnected from the internet. But moving petabytes of data while an attacker is actively sabotaging the network is like trying to move a library out of a burning building while the arsonist is still inside, locking the doors.</p>
+
+                <p>Do not trust any "Security Patch" or "Diagnostic Tool" sent to you by anyone, even if they appear to be a Discord employee. We will only communicate through official, verified channels—if any of those are even left. The "Awaiting Endpoint" error is your warning. If you see it, disconnect immediately. Your account, your Bitcoin, and your digital life are on the line.</p>
+
+                <p>We are running out of time. The compromizer is watching. They are likely reading this very text as it is being published. To ivorydevrimoqr#7079: We know what you've taken. We know what you're planning. The internet is a big place, but it is not big enough to hide from everyone forever. To our users: We are sorry. We thought we were ready. We were wrong.</p>
+
+                <p>The implementation of the YouTube video on <span class="deadline-text"></span> will mark the final stage of the hijack. It will be the "Victory Flag" for the compromizer. We will do everything in our power to ensure that day never comes, but the friction of the battle is slowing us down. Every step we take forward feels like walking through deep mud.</p>
+
+                <p>Wait... the logs are showing a new injection. They're targeting the CSS of this very page. If you feel like the page is getting harder to move, it's not your imagination. They are trying to stop you from reaching the end. They are trying to stop the truth from being read. Keep going. Don't stop.</p>
+
+                <p>We've found more logs. The "Secret Servers" weren't just for development. They were used to store the encryption keys for our entire database. If those keys are fully leaked, every private message ever sent on Discord will be readable by anyone with a copy of the database. The scale of this privacy violation is beyond comprehension. It would be the end of private digital communication as we know it.</p>
+
+                <p>The Bitcoin database isn't just a ledger; it's a map. It shows who you are, what you support, and where your money goes. In the hands of a hijacker, it is a tool for extortion and blackmail. We have already received reports of users being threatened with their transaction history. This is the reality of the backdoor. This is the cost of our failure.</p>
+
+                <p>Stay focused. The deadline is approaching. <span class="deadline-text"></span>. Mark it on your calendars, if we still have a calendar to mark. The shutdown is coming. The end is near. We are trying to find more hackers, but the shadows are deep, and ivorydevrimoqr#7079 is only the beginning of the darkness.</p>
+
+                <p>The friction is peaking now. The server is fighting the exfiltration. If you can read this, you have survived the first wave. But the endpoint is waiting. The YouTube video is being buffered. The shutdown is scheduled. We are fading. Goodbye.</p>
+
+                <footer>
+                    Stay safe. -- Wumpus / Jason Citron
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const bg = document.getElementById('bg');
+        const scrollContainer = document.getElementById('scroll-container');
+        const dateElement = document.getElementById('current-date');
+        const deadlineElements = document.querySelectorAll('.deadline-text');
+        const deadlineIdElement = document.getElementById('deadline-date');
+
+        // Date logic
+        const now = new Date();
+        dateElement.textContent = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+        const deadline = new Date(now.getTime());
+        deadline.setMonth(deadline.getMonth() + 17);
+        deadline.setDate(deadline.getDate() + (7 * 7));
+        
+        const deadlineStr = deadline.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        
+        deadlineIdElement.textContent = deadlineStr;
+        deadlineElements.forEach(el => el.textContent = deadlineStr);
+
+        // Scroll friction
+        let currentScroll = 0;
+        let targetScroll = 0;
+
+        window.addEventListener('wheel', (e) => {
+            const maxScroll = scrollContainer.scrollHeight - window.innerHeight;
+            const scrollProgress = Math.abs(currentScroll) / maxScroll;
+            
+            let friction = 1;
+
+            if (scrollProgress < 0.98) {
+                friction = 1 + (scrollProgress * 2); 
+            } else {
+                const endProgress = (scrollProgress - 0.98) / 0.02; 
+                friction = 3 + Math.pow(endProgress * 50, 3);
+            }
+            
+            targetScroll -= (e.deltaY / friction);
+            
+            if (targetScroll > 0) targetScroll = 0;
+            if (targetScroll < -maxScroll) targetScroll = -maxScroll;
+        }, { passive: false });
+
+        function animate() {
+            currentScroll += (targetScroll - currentScroll) * 0.15;
+            scrollContainer.style.transform = `translateY(${currentScroll}px)`;
+
+            const maxScroll = scrollContainer.scrollHeight - window.innerHeight;
+            const scrollPercent = Math.abs(currentScroll) / maxScroll;
+            
+            const saturation = Math.max(0, 1 - (scrollPercent * 1.8)); 
+            const blur = 8 + (scrollPercent * 25);
+            bg.style.filter = `blur(${blur}px) saturate(${saturation})`;
+            
+            if (scrollPercent > 0.97) {
+                const shake = (scrollPercent - 0.97) * 40;
+                scrollContainer.style.left = `${(Math.random() - 0.5) * shake}px`;
+            } else {
+                scrollContainer.style.left = '0px';
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
